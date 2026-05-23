@@ -157,4 +157,22 @@ netsentinel_v4/
 
 ## License
 
-MIT — use freely, modify freely, no warranty.
+License: Custom Personal Use License
+
+Copyright (c) 2026 Your Name
+
+Permission is granted to use this software for personal and educational purposes only.
+
+You may modify the software for private use, but you may NOT:
+
+- Republish this software
+- Redistribute this software
+- Sell this software
+- Sublicense this software
+- Claim this software as your own work
+- Upload modified or unmodified copies publicly
+
+This software is provided "as is", without warranty of any kind.
+The author is not responsible for any damages or issues caused by the software.
+
+All rights remain with the original author.
