@@ -1,0 +1,57 @@
+# ── Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+eggs/
+.eggs/
+*.whl
+pip-wheel-metadata/
+MANIFEST
+
+# ── Virtual environments ─────────────────────────────────────────
+venv/
+env/
+.env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ── PyInstaller ──────────────────────────────────────────────────
+dist/
+build/
+*.spec
+
+# ── IDE / Editor ─────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.cursor/
+
+# ── OS junk ─────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+.DS_Store
+ehthumbs.db
+
+# ── Logs & temp files ────────────────────────────────────────────
+*.log
+err.txt
+output.txt
+logs/
+*.json.bak
+
+# ── Secrets / keys ───────────────────────────────────────────────
+*.env
+secrets.py
+config.local.py
