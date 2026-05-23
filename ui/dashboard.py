@@ -152,7 +152,7 @@ class NetSentinelDashboard(QMainWindow):
         self.refresh_interval = QComboBox()
         self.refresh_interval.addItems(["1 sec", "2 sec", "3 sec", "5 sec"])
         self.refresh_interval.setCurrentIndex(2) # Default 3s
-        self.refresh_interval.currentIndexChanged.connect(self._on_interval_changed)
+        self.refresh_interval.currentTextChanged.connect(self._on_interval_changed)
 
         header_layout.addWidget(self.auto_refresh_box)
         header_layout.addWidget(self.refresh_interval)
@@ -952,9 +952,13 @@ class NetSentinelDashboard(QMainWindow):
             app_logger.log("INFO", "Auto-refresh deactivated.")
 
     def _on_interval_changed(self, text):
-        val = int(text.split()[0])
-        self.refresh_timer.setInterval(val * 1000)
-        app_logger.log("INFO", f"Refresh interval configured to {text}.")
+        """Called when the user picks a new refresh interval from the combo box."""
+        try:
+            val = int(str(text).split()[0])  # e.g. "3 sec" -> 3
+            self.refresh_timer.setInterval(val * 1000)
+            app_logger.log("INFO", f"Refresh interval set to {text}.")
+        except (ValueError, IndexError, AttributeError):
+            pass  # Ignore spurious signal firings with unexpected values
 
     # ───────────────────────── LOGS & REPORTS ──────────────────────────
     def export_logs_to_json(self):
